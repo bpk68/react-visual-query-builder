@@ -1,0 +1,144 @@
+// Lifted and edited from this gist
+// https://gist.github.com/hallojoe/d9e09af213e8e57b024706ffb3d413b3
+
+$range-track-width: 15rem;
+$range-track-height: .7em;
+$range-track-background: $light-grey;
+$range-track-background-focus: $light-grey;
+$range-track-border: none;
+$range-track-border-radius: $radius;
+$range-thumb-width: 1.5em;
+$range-thumb-height: 1.5em;
+$range-thumb-background: $dark-grey;
+$range-thumb-border: none;
+$range-thumb-border-radius: 50%;  
+// -(thumb height / 2) - (track height / 2) 
+$range-webkit-slider-thumb-margin-top: 
+  calc((calc(-#{$range-thumb-width} / 2) - calc(-#{$range-track-height} / 2)));
+
+@mixin range-track {
+  border: $range-track-border;
+  width: $range-track-width;
+  height: $range-track-height;
+  background: $range-track-background;
+  border-radius: $range-track-border-radius;
+}
+
+@mixin range-thumb {
+  border: $range-thumb-border;
+  width: $range-thumb-width;
+  height: $range-thumb-height;
+  border-radius: $range-thumb-border-radius;
+  background: $range-thumb-background;    
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 0.2rem hsla(0, 0%, 46%, 0.5);
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    background: hsla(0, 0%, 46%, 0.5);    
+  }
+
+}
+
+input[type=range].slider {
+
+  -webkit-appearance: none;
+  width: $range-track-width;
+
+  &::-webkit-slider-runnable-track {
+    @include range-track();
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: $range-webkit-slider-thumb-margin-top;
+    @include range-thumb();
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: $range-track-background-focus;
+  }
+
+  // apply FF only rules
+  @supports (-moz-appearance:none) {
+    /* 
+      fix for FF unable to apply focus style bug  
+      note: this is fixed as of version 60: 
+      https://bugzilla.mozilla.org/show_bug.cgi?id=712130
+    */
+     border: 1px solid transparent; 
+  }
+
+  
+  &::-moz-range-track {
+    @include range-track();
+  }
+
+  &::-moz-range-thumb {
+    @include range-thumb();
+  }
+
+  /*
+    hide the outline behind the border
+  */
+  &:-moz-focusring{
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &:focus::-moz-range-track {
+    background: $range-track-background-focus;
+  }
+
+
+  &::-ms-track {
+    width: $range-track-width;
+    height: $range-track-height;
+    
+    /*
+      remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead 
+    */
+    background: transparent;
+    
+    /*
+      leave room for the larger thumb to overflow with a transparent border 
+    */
+    border-color: transparent;
+    border-width: 20px 0;
+
+    /*
+      remove default tick marks
+    */
+    color: transparent;
+  }
+  &::-ms-fill-lower {
+    background: #777;//#777;//$range-track-background;
+    border-radius: 10px;
+  }
+  &::-ms-fill-upper {
+    background: #ddd;//#888;//$range-track-background;
+    border-radius: 10px;
+  }
+  &::-ms-thumb {
+    @include range-thumb();
+    // edge
+    @supports (-ms-ime-align: auto) {
+      & {
+        margin-top:-4px;
+      }
+    }
+  }
+  &:focus::-ms-fill-lower {
+    background: #888;//$range-track-background-focus;
+  }
+  &:focus::-ms-fill-upper {
+    background: #ccc; //$range-track-background-focus;
+  }
+}

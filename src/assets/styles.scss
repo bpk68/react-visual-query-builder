@@ -1,0 +1,21 @@
+// Variables
+$grey: hsl(0, 0%, 60%);
+$dark-grey: hsl(0, 0%, 46%);
+$light-grey: hsl(0, 0%, 77%);
+$light-blue: hsl(208, 100%, 97%);
+$blue: hsl(208, 79%, 64%);
+$green: hsl(144, 95%, 36%);
+$red: hsl(19, 95%, 36%);
+$radius: 5px;
+
+
+// General
+
+
+// Imports
+.react-qb {
+    @import './buttons';
+    @import './rules';
+    @import './fields';
+    @import './overrides';
+}

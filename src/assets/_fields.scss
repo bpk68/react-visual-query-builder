@@ -1,0 +1,124 @@
+// Autocomplete
+.autocomplete-container {
+    position: relative;
+
+    input.input-search {
+        height: 0;
+        visibility: hidden;
+        
+        &.is-active {
+            height: initial;
+            visibility: visible;
+        }
+    }
+
+    .autocomplete-results {
+        position: absolute;
+        left: -9999px;
+        top: 0%;
+        opacity: 0;
+        z-index: 100;
+
+        &.is-active {
+            opacity: 1;
+            left: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #fff;
+            border: 1px solid $light-grey;
+            width: 125%;
+            overflow-y: scroll;
+            font-size: 1em;
+            border-radius: 0 0 5px 5px;
+            max-height: 200px;
+        }
+        
+        li {
+            display: block;
+            line-height: 1.7;
+            padding: 0 0.5em;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($light-blue, 10%);
+                outline: 1px solid darken($light-blue, 20%);
+            }
+        }
+    }
+}
+
+// Basic inputs
+input {
+
+    &.has-error {
+        outline: 1px solid $red;
+    }
+}
+
+// Toggle
+.switch[type='checkbox'] {
+
+    outline: 0;
+    user-select: none;
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+
+    &+ label {
+        position: relative;
+        display: block;
+        font-size: 1rem;
+        line-height: initial;
+        padding-left: 2.5rem;
+        padding-top: 0;
+        cursor: pointer;
+
+        &::before {
+            background-color: $light-grey;
+            border-radius: 25px;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 2rem;
+            height: 1rem;
+            border: 0.1rem solid
+            transparent;
+            content: '';
+        }
+
+        &::after {
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: .21rem;
+            left: .25rem;
+            width: .7rem;
+            height: .7rem;
+            transform: translate3d(0, 0, 0);
+            background: #fff;
+            transition: all 0.15s ease-out;
+            content: '';
+        }
+    }
+
+    &:checked {
+        &+ label {
+
+            &::before {
+                background-color: $green;
+            }
+
+            &::after {
+                left: 1.25rem;
+            }
+        }
+    }
+}
+
+// Slider
+@import './slider';

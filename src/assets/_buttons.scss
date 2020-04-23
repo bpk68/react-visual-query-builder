@@ -1,0 +1,32 @@
+.button {
+    background-color: $light-grey;
+    border: 1px solid darken($color: $light-grey, $amount: 10%);
+    margin: 0.5em 0.5em 0.5em 0;
+    border-radius: 25px;
+    padding: 0.3em 1em;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($color: $light-grey, $amount: 10%);
+    }
+
+    &.is-primary {
+        background-color: $green;
+        border: 1px solid darken($color: $green, $amount: 10%);
+        color: #222;
+
+        &:hover {
+            background-color: darken($color: $green, $amount: 10%);
+        }
+    }
+
+    &.is-danger {
+        background-color: $red;
+        border: 1px solid darken($color: $red, $amount: 10%);
+        color: white;
+
+        &:hover {
+            background-color: darken($color: $red, $amount: 10%);
+        }
+    }
+}

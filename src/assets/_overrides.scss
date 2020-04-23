@@ -1,0 +1,11 @@
+
+// react-datepicker
+.react-datepicker__close-icon {
+
+    &::after {
+        background-color: transparent;
+        color: inherit;
+        font-size: 1em;
+        font-weight: bold;
+    }
+}

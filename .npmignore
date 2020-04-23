@@ -1,0 +1,10 @@
+.DS_Store
+node_modules
+.cache
+__mocks__
+example
+src
+.babelrc
+.eslintrc.json
+config
+setupTests.js
