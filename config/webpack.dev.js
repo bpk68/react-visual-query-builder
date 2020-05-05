@@ -24,7 +24,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'IAMC React Query Builder - Example',
+            title: 'React Visual Query Builder - Example',
             inject: 'footer',
             template: './example/src/index.html'
         }),
