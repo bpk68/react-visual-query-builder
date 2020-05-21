@@ -94,7 +94,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "lodash": "^4.17.15",
     "moment": "^2.25.3",
-    "nanoid": "^2.1.11",
+    "nanoid": "^3.0.0",
     "prop-types": "^15.7.2",
     "react-datepicker": "^2.14.1"
   },
