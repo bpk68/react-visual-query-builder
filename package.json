@@ -51,7 +51,7 @@
     "@babel/preset-env": "7.22.10",
     "@babel/preset-react": "7.22.5",
     "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/react": "12.1.5",
+    "@testing-library/react": "14.0.0",
     "@typescript-eslint/eslint-plugin": "5.60.1",
     "@typescript-eslint/parser": "5.60.1",
     "@babel/eslint-parser": "7.22.11",
