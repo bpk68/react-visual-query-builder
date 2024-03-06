@@ -82,7 +82,7 @@
     "sass-loader": "12.6.0",
     "react-id-generator": "3.0.2",
     "react-test-renderer": "17.0.2",
-    "style-loader": "3.3.3",
+    "style-loader": "3.3.4",
     "uglifyjs-webpack-plugin": "2.2.0",
     "url-loader": "4.1.1",
     "webpack": "5.88.2",
