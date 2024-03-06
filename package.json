@@ -74,7 +74,7 @@
     "image-webpack-loader": "8.1.0",
     "jest": "27.5.1",
     "jest-enzyme": "7.1.2",
-    "node-sass": "7.0.3",
+    "node-sass": "9.0.0",
     "optimize-css-assets-webpack-plugin": "6.0.1",
     "mini-css-extract-plugin": "2.7.6",
     "react": "17.0.2",
